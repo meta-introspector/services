@@ -1,0 +1,19 @@
+[Unit]
+Description=Solana Validator
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=sol
+LimitNOFILE=1000000
+LogRateLimitIntervalSec=0
+#ExecStart=/home/sol/validator.sh
+ExecStart= /opt/solana/solana-release/bin/solana-test-validator -q --ledger /var/db/solana/test-ledger -u localhost
+
+#./solana-release/bin/solana-test-validator 
+
+[Install]
+WantedBy=multi-user.target
