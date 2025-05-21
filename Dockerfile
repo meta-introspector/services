@@ -44,8 +44,7 @@ RUN dos2unix /opt/services/scripts/runsolana.sh
 RUN /bin/bash /opt/services/scripts/runsolana.sh
 
 
-ADD scripts/part2.sh /opt/services/scripts/part2.sh
-
+#ADD scripts/part2.sh /opt/services/scripts/part2.sh
 
 ADD scripts/get_secrets_solana.sh /opt/services/scripts/get_secrets_solana.sh
 RUN dos2unix /opt/services/scripts/get_secrets_solana.sh
