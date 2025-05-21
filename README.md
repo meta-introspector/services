@@ -25,3 +25,5 @@ bash ./scripts/rundocker.sh
 ```
 
 --ws ssm send-command    --instance-ids "i-023d1e2a87031969e"     --document-name "AWS-RunShellScript"    --parameters commands="pushd /opt/services/  && git pull" 
+
+The docker image can be packaged to run in aws or elsewhere

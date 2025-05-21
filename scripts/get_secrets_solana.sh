@@ -2,7 +2,7 @@
 # we are using parameters prefixed by ${CHAIN_NAME}_, eg. "tine_CHAIN_7_"
 ## TURN OFF LOGGING
 echo using "${CHAIN_NAME}" as chain name base for keys
-set +x
+set +e
 
 # This script expects CHAIN_NAME to be set to something like "tine_chain"
 
