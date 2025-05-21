@@ -67,3 +67,7 @@ mkdir -p "/var/run/solana/secrets/"
 #dos2unix  /opt/services/scripts/get_secrets_solana.sh
 #snap install aws-cli --classic
 
+cp "/opt/services/systemd/solana.service" /etc/systemd/system/solana.service 
+#grep . -h -n /etc/systemd/system/solana-docker.service
+chown -R solana:solana /var/run/solana/
+chown -R solana:solana /opt/services/
