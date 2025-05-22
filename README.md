@@ -185,9 +185,5 @@ ssh ubuntu@i-08e0eb40cd783623c sudo bash -c /opt/service/scripts/runsolana.sh
    63  bash ./status-solana.
    64  bash ./status-solana.sh
    
-   67  systemctl stop docker
-   68  systemctl stop docker.socket   
-   70  systemctl stop containerd
-   71  systemctl stop snapd
-   72  systemctl stop snapd.socket
+     systemctl stop docker stop docker.socket   containerd snapd  snapd.socket
    
