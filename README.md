@@ -174,3 +174,20 @@ copy .ssh key
    22  history
 
 ssh ubuntu@i-08e0eb40cd783623c sudo bash -c /opt/service/scripts/runsolana.sh
+
+
+
+   58  cd service
+   59  git pull
+   60  cd scripts/
+   61  bash ./runsolana.sh
+   62  bash ./start-solana.sh
+   63  bash ./status-solana.
+   64  bash ./status-solana.sh
+   
+   67  systemctl stop docker
+   68  systemctl stop docker.socket   
+   70  systemctl stop containerd
+   71  systemctl stop snapd
+   72  systemctl stop snapd.socket
+   
