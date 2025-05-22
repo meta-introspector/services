@@ -38,6 +38,7 @@ then
 fi  
 
 if [ ! -f /usr/local/bin/aws ]; 
+then
     /opt/aws/aws/install
 fi
 
