@@ -56,9 +56,12 @@ if [ -f /opt/solana/archives/solana-release-aarch64-unknown-linux-gnu.tar.bz2 ];
 else    
     cd /opt/solana/archives/
     wget https://github.com/staratlasmeta/agave-dist/releases/download/v2.2.13/solana-release-aarch64-unknown-linux-gnu.tar.bz2
-    cd /opt/solana/
-    tar -xvjf archives/solana-release-aarch64-unknown-linux-gnu.tar.bz2
+    
 fi
+
+cd /opt/solana/
+tar -xvjf archives/solana-release-aarch64-unknown-linux-gnu.tar.bz2
+
 #rm solana-release-aarch64-unknown-linux-gnu.tar.bz2
 cd  /opt/solana/solana-release/
 
