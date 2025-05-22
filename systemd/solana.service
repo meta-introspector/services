@@ -11,9 +11,7 @@ User=solana
 LimitNOFILE=1000000
 LogRateLimitIntervalSec=0
 #ExecStart=/home/sol/validator.sh
-ExecStart= /opt/solana/solana-release/bin/solana-test-validator -q --ledger /var/db/solana/test-ledger -u localhost  --limit-ledger-size 10 
-
-#./solana-release/bin/solana-test-validator 
+ExecStart= /opt/solana/solana-release/bin/solana-test-validator -q --ledger /var/db/solana/test-ledger -u localhost --limit-ledger-size 10 
 
 [Install]
 WantedBy=multi-user.target
