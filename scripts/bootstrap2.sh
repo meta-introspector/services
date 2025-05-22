@@ -6,7 +6,7 @@ declare -A services=(
   ["branch"]="main"
   ["directory"]="services"
   ["repo"]="meta-introspector/services"
-  ["script"]="scripts/bootstrap2.sh" # bootstrap calls bootstrap2 to avoid infinite loops
+  ["script"]="scripts/bootstrap3.sh" # bootstrap calls bootstrap2 to avoid infinite loops
 )
 
 declare -A eliza=(

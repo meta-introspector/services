@@ -2,11 +2,12 @@
 # this is a simulated user data for injection into a running system
 #!/bin/bash -xe
 set -x
+# we remove all services for now, this is the second bootstrap. everything should be up to date now.
 declare -A services=(
   ["branch"]="main"
   ["directory"]="services"
   ["repo"]="meta-introspector/services"
-  ["script"]="scripts/bootstrap2.sh" # bootstrap calls bootstrap2 to avoid infinite loops
+  ["script"]="scripts/bootstrap_f.sh" # bootstrap calls bootstrap2 to avoid infinite loops
 )
 
 declare -A eliza=(
@@ -17,7 +18,7 @@ declare -A eliza=(
 )
 
 declare -a services_array
-services_array[0]="services"
+#services_array[0]="services"
 #services_array[1]="eliza"
 
 # Access values (using indirect expansion)
