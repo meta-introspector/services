@@ -12,23 +12,7 @@ LimitNOFILE=1000000
 LogRateLimitIntervalSec=0
 
 #--log /var/db/solana/solana-rpc.log \ 
-ExecStart=/opt/solana/solana-release/bin/solana-test-validator \ 
- --accounts /var/db/solana/accounts \
- --log \
- --ledger /var/db/solana/test-ledger \
- --no-voting \
- -u localhost \
- --rpc-port 8899 \
- --gossip-port 8001 \                
- --dynamic-port-range 8002-8021 \
- --limit-ledger-size 10 \
- --rpc-threads 2 \
- --only-known-rpc  \
- --full-rpc-api \ 
- --no-voting \
- --no-genesis-fetch \
- --no-snapshot-fetch \
- --wal-recovery-mode skip_any_corrupted_record
+ExecStart=/opt/solana/solana-release/bin/solana-test-validator  --accounts /var/db/solana/accounts  --log  --ledger /var/db/solana/test-ledger  --no-voting  -u localhost  --rpc-port 8899  --gossip-port 8001 --dynamic-port-range 8002-8021  --limit-ledger-size 10  --rpc-threads 2  --only-known-rpc   --full-rpc-api  --no-voting  --no-genesis-fetch  --no-snapshot-fetch --wal-recovery-mode skip_any_corrupted_record
 
 # --enable-rpc-transaction-history
 # --no-port-check
