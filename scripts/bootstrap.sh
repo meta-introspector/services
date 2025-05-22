@@ -34,6 +34,7 @@ for service_name in "${services_array[@]}"; do
   repo="${service[repo]}"
   target_dir="${service[directory]}"
   branch="${service[branch]}"
+  script="${service[script]}"
   src="https://github.com/${repo}.git"
   dest="/opt/${target_dir}/"
 

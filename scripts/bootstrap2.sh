@@ -36,7 +36,7 @@ for service_name in "${services_array[@]}"; do
   branch="${service[branch]}"
   src="https://github.com/${repo}.git"
   dest="/opt/${target_dir}/"
-
+  script="${service[script]}"
   # Clone the repository
   echo "Cloning $src into $dest"
   if [[ -d "$dest" ]]; then
