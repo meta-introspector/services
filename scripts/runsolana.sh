@@ -22,10 +22,23 @@ export WORKSOURCE="/opt/solana"
 echo for now install helper tools
 #snap install aws-cli --classic
 mkdir -p /opt/aws/
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/opt/aws/awscliv2.zip"
-cd /opt/aws/
-unzip ./awscliv2.zip
-./aws/install
+if [ -f "/opt/aws/awscliv2.zip" ];
+then
+    echo "awscliv2.zip already exists, skipping download"
+else
+    cd /opt/aws/
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/opt/aws/awscliv2.zip"
+fi
+
+
+if [ ! -f "/opt/aws/aws/install" ];
+    cd /opt/aws/
+    unzip ./awscliv2.zip
+fi  
+
+if [ ! -f /usr/local/bin/aws ]; 
+    /opt/aws/aws/install
+fi
 
 apt install -y jq
 apt install -y lsof strace nmap

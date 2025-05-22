@@ -29,7 +29,7 @@ function Invoke-SSMCommand {
     }
 }
 
-$instanceId = "i-08e0eb40cd783623c"
+
 
 function SetupGit {    
     $command = "sudo bash -x -c 'git config --global --add safe.directory /opt/services'"       

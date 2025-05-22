@@ -164,3 +164,13 @@ git commit -m 'update' -a; git push; & ".\bootstrap.ps1"
 aws ssm start-session --target i-023d1e2a87031969e --region us-east-2
 
 git commit -m 'update' -a; git push; & ".\start-solana.ps1"
+
+copy .ssh key
+
+ cd /home/ubuntu/
+   17  sudo su -
+   18  apt install vim
+   21  vim authorized_keys
+   22  history
+
+ssh ubuntu@i-08e0eb40cd783623c sudo bash -c /opt/service/scripts/runsolana.sh

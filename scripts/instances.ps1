@@ -1,4 +1,6 @@
-# aws-ssm-invoke.ps1
+#instancese
+$Global:instanceId = "i-08e0eb40cd783623c"
+
 
 function Invoke-SSMCommand {
     param (
@@ -28,11 +30,3 @@ function Invoke-SSMCommand {
         return 1
     }
 }
-
-. ./instances.ps1
-function Main {
-    $command = "sudo bash -x /opt/service/scripts/status-eliza.sh"    
-    $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait    
-}
-
-Main
