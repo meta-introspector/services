@@ -1,6 +1,7 @@
 #instancese
-$Global:instanceId = "i-08e0eb40cd783623c"
-
+#$Global:instanceId = "i-08e0eb40cd783623c"
+#i-08bf0dc04bc363ca0
+$Global:instanceId = "i-08bf0dc04bc363ca0"
 
 function Invoke-SSMCommand {
     param (
