@@ -2,7 +2,7 @@
 
 . ./instances.ps1
 function Main {
-    $command = "sudo bash -x /opt/service/scripts/stop-eliza.sh"    
+    $command = "sudo bash -x /opt/services/scripts/stop-eliza.sh"    
     $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait    
 }
 

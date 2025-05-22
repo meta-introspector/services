@@ -31,7 +31,7 @@ function Invoke-SSMCommand {
 
 . ./instances.ps1
 function Main {
-    $command = "sudo bash -x /opt/service/scripts/status-eliza.sh"    
+    $command = "sudo bash -x /opt/services/scripts/status-eliza.sh"    
     $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait    
 }
 

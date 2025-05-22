@@ -11,9 +11,8 @@ User=solana
 LimitNOFILE=1000000
 LogRateLimitIntervalSec=0
 
-ExecStart=/opt/solana/solana-release/bin/solana-test-validator \
- -q \
- --log /var/db/solana/solana-rpc.log \
+#--log /var/db/solana/solana-rpc.log \ 
+ExecStart=/opt/solana/solana-release/bin/solana-test-validator \ 
  --accounts /var/db/solana/accounts \
  --ledger /var/db/solana/test-ledger \
  --no-voting \

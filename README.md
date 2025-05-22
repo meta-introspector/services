@@ -72,11 +72,11 @@ docker run -v /sys/fs/cgroup/:/sys/fs/cgroup:ro --cap-add SYS_ADMIN -it solana
 
     C:\users\gentd\appdata\roaming\python\python312\Scripts\aws-ssm-invoke.exe 
 
-    git clone https://github.com/meta-introspector/services.git /opt/service/ && bash -x /opt/service/scripts/bootstrap.sh
+    git clone https://github.com/meta-introspector/services.git /opt/services/ && bash -x /opt/services/scripts/bootstrap.sh
 
      aws-ssm-invoke.exe  --instance-ids i-08e0eb40cd783623c  --show-output "bash -x /opt/services/scripts/update-git.sh  && bash -x /opt/services/scripts/status-solana.sh"  
 
-     C:\users\gentd\appdata\roaming\python\python312\Scripts\aws-ssm-invoke.exe  --instance-ids i-08e0eb40cd783623c  --wait "sudo bash -x /opt/service/scripts/bootstrap.sh"
+     C:\users\gentd\appdata\roaming\python\python312\Scripts\aws-ssm-invoke.exe  --instance-ids i-08e0eb40cd783623c  --wait "sudo bash -x /opt/services/scripts/bootstrap.sh"
 
 
 
@@ -173,7 +173,7 @@ copy .ssh key
    21  vim authorized_keys
    22  history
 
-ssh ubuntu@i-08e0eb40cd783623c sudo bash -c /opt/service/scripts/runsolana.sh
+ssh ubuntu@i-08e0eb40cd783623c sudo bash -c /opt/services/scripts/runsolana.sh
 
 
 

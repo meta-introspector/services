@@ -4,7 +4,7 @@
 . ./instances.ps1
 
 function Main {
-    $command = "sudo bash -x /opt/service/scripts/runsolana.sh"    
+    $command = "sudo bash -x /opt/services/scripts/runsolana.sh"    
     $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait    
 }
 

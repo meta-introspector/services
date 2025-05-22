@@ -21,17 +21,17 @@ function SSH {
 }
 
 function Clone {
-    $command = "sudo bash -x -c 'git clone https://github.com/meta-introspector/services.git /opt/service/'" 
+    $command = "sudo bash -x -c 'git clone https://github.com/meta-introspector/services.git /opt/services/'" 
     $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait
 }
 
 function Update {
-    $command = "sudo bash -x -c 'cd /opt/service/ && git pull'" 
+    $command = "sudo bash -x -c 'cd /opt/services/ && git pull'" 
     $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait
 }
 
 function Main {
-    $command = "sudo bash -x /opt/service/scripts/bootstrap.sh"    
+    $command = "sudo bash -x /opt/services/scripts/bootstrap.sh"    
     $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait    
 }
 
