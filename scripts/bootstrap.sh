@@ -40,6 +40,7 @@ for service_name in "${services_array[@]}"; do
   echo "Cloning $src into $dest"
   if [[ -d "$dest" ]]; then
     echo "Directory $dest already exists. Skipping clone."
+  else
     if ! git clone "$src" "$dest"; then
       echo "Error: Failed to clone $src into $dest"
       continue
