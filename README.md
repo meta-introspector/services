@@ -162,3 +162,5 @@ docker run -v /sys/fs/cgroup/:/sys/fs/cgroup:ro --cap-add SYS_ADMIN -it solana
 git commit -m 'update' -a; git push; & ".\bootstrap.ps1"
 
 aws ssm start-session --target i-023d1e2a87031969e --region us-east-2
+
+git commit -m 'update' -a; git push; & ".\start-solana.ps1"
