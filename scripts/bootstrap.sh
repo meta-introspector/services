@@ -25,7 +25,7 @@ declare -A eliza=(
 
 declare -a services_array
 services_array[0]="services"
-services_array[1]="solana"
+#services_array[1]="solana"
 #services_array[1]="eliza"
 
 # Access values (using indirect expansion)
