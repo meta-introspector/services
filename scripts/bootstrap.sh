@@ -3,7 +3,7 @@
 #!/bin/bash -xe
 set -x
 declare -A services=(
-  ["branch"]="main",
+  ["branch"]="main"
   ["directory"]="services"
   ["repo"]="meta-introspector/services"
 )
