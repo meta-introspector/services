@@ -157,4 +157,8 @@ docker run -v /sys/fs/cgroup/:/sys/fs/cgroup:ro --cap-add SYS_ADMIN -it solana
   40 C:\users\gentd\appdata\roaming\python\python312\Scripts\aws-ssm-invoke.exe  --instance-ids i-023d1e2a87031969e  --show-output "git config --global --add safe.directory /opt/services && bash -x /opt/services...
 
 
-PS C:\Users\gentd\OneDrive\Documents\GitHub\services> 
+
+
+git commit -m 'update' -a; git push; & ".\bootstrap.ps1"
+
+aws ssm start-session --target i-023d1e2a87031969e --region us-east-2

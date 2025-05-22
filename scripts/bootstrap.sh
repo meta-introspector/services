@@ -1,7 +1,7 @@
 #userdata.sh
 # this is a simulated user data for injection into a running system
 #!/bin/bash -xe
-
+set -x
 declare -A services=(
   ["branch"]="main",
   ["directory"]="services"
