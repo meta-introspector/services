@@ -14,6 +14,7 @@ LogRateLimitIntervalSec=0
 #--log /var/db/solana/solana-rpc.log \ 
 ExecStart=/opt/solana/solana-release/bin/solana-test-validator \ 
  --accounts /var/db/solana/accounts \
+ --log \
  --ledger /var/db/solana/test-ledger \
  --no-voting \
  -u localhost \
