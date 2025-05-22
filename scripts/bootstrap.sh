@@ -3,7 +3,7 @@
 #!/bin/bash -xe
 
 declare -A services=(
-  ["branch"]="origin/main",
+  ["branch"]="main",
   ["directory"]="services"
   ["repo"]="meta-introspector/services"
 )
@@ -57,6 +57,8 @@ for service_name in "${services_array[@]}"; do
   git fetch --all
   if ! git checkout "$branch"; then
     echo "Error: Failed to checkout branch $branch"
+    pwd
+    git status
     continue
   fi
 
