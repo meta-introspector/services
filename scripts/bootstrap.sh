@@ -72,7 +72,7 @@ for service_name in "${services_array[@]}"; do
       echo "Error: Bootstrap script failed in $dest"
     fi
   else
-    echo "Warning: No bootstrap script found in $dest"
+    echo "Warning: No bootstrap script found in ${dest}/${script}"
   fi
 
   # Return to original directory (optional, depending on your needs)
