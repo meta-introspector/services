@@ -9,6 +9,13 @@ declare -A services=(
   ["script"]="scripts/bootstrap2.sh" # bootstrap calls bootstrap2 to avoid infinite loops
 )
 
+declare -A solana=(
+  ["branch"]="main"
+  ["directory"]="services"
+  ["repo"]="meta-introspector/services"
+  ["script"]="scripts/runsolana.sh" # bootstrap calls bootstrap2 to avoid infinite loops
+)
+
 declare -A eliza=(
     ["agent_name"]="tine_agent_9"
   ["branch"]="feature/v2/telegram",
@@ -18,6 +25,7 @@ declare -A eliza=(
 
 declare -a services_array
 services_array[0]="services"
+services_array[1]="solana"
 #services_array[1]="eliza"
 
 # Access values (using indirect expansion)
