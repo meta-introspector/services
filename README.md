@@ -67,3 +67,7 @@ docker run -v /sys/fs/cgroup/:/sys/fs/cgroup:ro --cap-add SYS_ADMIN -it solana
 
 
     C:\users\gentd\appdata\roaming\python\python312\Scripts\aws-ssm-invoke.exe 
+
+
+
+    C:\users\gentd\appdata\roaming\python\python312\Scripts\aws-ssm-invoke.exe 
