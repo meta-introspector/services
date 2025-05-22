@@ -32,6 +32,7 @@ fi
 
 
 if [ ! -f "/opt/aws/aws/install" ];
+then
     cd /opt/aws/
     unzip ./awscliv2.zip
 fi  
