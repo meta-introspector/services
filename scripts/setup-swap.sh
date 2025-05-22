@@ -11,7 +11,7 @@ swapon -s
 
 #$ sudo vi /etc/fstab
 #Add the following new line at the end of the file:
-if [ grep -q swapfile /etc/fstab ]; then
+if grep -q swapfile /etc/fstab; then
   echo "swapfile already exists"
 else
     echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
