@@ -44,7 +44,7 @@ fi
 
 apt install -y jq
 apt install -y lsof strace nmap
-
+apt install -y bzip2
 
 #mkdir -p /opt/solana
 mkdir -p /opt/solana/archives
@@ -60,7 +60,11 @@ else
 fi
 
 cd /opt/solana/
-tar -xvjf archives/solana-release-aarch64-unknown-linux-gnu.tar.bz2
+
+if [ ! -f /opt/solana/solana-release/bin/solana-test-validator ] ;
+then
+    tar -xvjf archives/solana-release-aarch64-unknown-linux-gnu.tar.bz2
+fi
 
 #rm solana-release-aarch64-unknown-linux-gnu.tar.bz2
 cd  /opt/solana/solana-release/
