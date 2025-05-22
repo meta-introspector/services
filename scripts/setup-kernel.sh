@@ -1,4 +1,9 @@
 # setup kernel
+#sysctl: setting key "kernel.nmi_watchdog": Operation not permitted
+#sysctl: cannot stat /proc/sys/kernel/sched_min_granularity_ns: No such file or directory
+#sysctl: cannot stat /proc/sys/kernel/sched_wakeup_granularity_ns: No such file or directory
+#sysctl: setting key "vm.swappiness": Invalid argument
+
 # source https://gist.github.com/Sparky-web/7439746c78419007f4d591b573614164
 bash -c "cat >/etc/sysctl.d/20-solana-additionals.conf <<EOF
 kernel.nmi_watchdog=0
