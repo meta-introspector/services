@@ -56,13 +56,15 @@ for service_name in "${services_array[@]}"; do
 
   # Git operations
   git fetch --all
+  
   if ! git checkout "$branch"; then
     echo "Error: Failed to checkout branch $branch"
     pwd
     git status
     continue
   fi
-
+  git pull 
+  
   # Run bootstrap script if it exists
   if [[ -f "${dest}/${script}" ]]; then
     echo "Running bootstrap script ${script} in $dest"
