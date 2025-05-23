@@ -28,7 +28,7 @@ then
 else
     cd /opt/aws/
     #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/opt/aws/awscliv2.zip"
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip  -o "/opt/aws/awscliv2.zip"
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"  -o "/opt/aws/awscliv2.zip"
 fi
 
 if [ ! -f "/opt/aws/aws/install" ];
