@@ -65,7 +65,8 @@ for service_name in "${services_array[@]}"; do
     continue
   fi
   git pull 
-  
+  git remote -v
+  git status
   # Run bootstrap script if it exists
   if [[ -f "${dest}${script}" ]]; then
     echo "Running bootstrap script ${script} in ${dest}"

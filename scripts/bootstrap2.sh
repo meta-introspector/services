@@ -18,13 +18,6 @@ declare -A eliza=(
 
 declare -a services_array
 services_array[0]="services"
-#services_array[1]="eliza"
-
-# Access values (using indirect expansion)
-echo ${!services_array[0]["branch"]}  # Outputs: origin/main
-echo ${!services_array[1]["directory"]}  # Outputs: services/api
-
-
 # Loop over services_array
 for service_name in "${services_array[@]}"; do
   # Use indirect expansion to access the associative array
@@ -64,6 +57,8 @@ for service_name in "${services_array[@]}"; do
     continue
   fi
   git pull 
+  git remote -v
+  git status
   # Run bootstrap script if it exists
   if [[ -f "${dest}/${script}" ]]; then
     echo "Running bootstrap script ${script} in $dest"
