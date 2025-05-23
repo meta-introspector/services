@@ -1,3 +1,6 @@
+#!/bin/bash
+set -x
+echo "Running user data script"
 # fake user data for the docker file
 export AGENT_NAME="AgentCodeName"
 export CHAIN_NAME="ChainName"
@@ -8,6 +11,9 @@ echo AGENT_NAME="${AGENT_NAME}" > /etc/solana/env
 echo CHAIN_NAME="${CHAIN_NAME}" >> /etc/solana/env
 echo GIT_REPO="${GIT_REPO}" >> /etc/solana/env
 echo GIT_BRANCH="${GIT_BRANCH}"  >> /etc/solana/env
+
+grep . /etc/solana/env
+
 export HOME=/root
 apt update
 apt-get install -y ec2-instance-connect git wget unzip systemd curl
@@ -15,13 +21,19 @@ apt-get install -y cloud-utils apt-transport-https ca-certificates curl software
 apt-get update              
 snap install amazon-ssm-agent --classic || echo oops1
 snap start amazon-ssm-agent || echo oops2
+
+echo initial checkout
 if [ ! -d "/opt/services/" ]; then
     git clone "${GIT_REPO}" "/opt/services/"
 fi
+
+
 cd "/opt/services/" || exit 1
 git stash
 git fetch --all
 git checkout --track --force "origin/${GIT_BRANCH}"
+
+echo going to run bootstrap.sh
 bash -x /opt/services/scripts/bootstrap.sh
 
             
