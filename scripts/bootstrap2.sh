@@ -11,7 +11,7 @@ declare -A solana=(
 
 declare -a services_array
 #services_array[0]="services"
-services_array[1]="solana"
+services_array[0]="solana"
 # Loop over services_array
 for service_name in "${services_array[@]}"; do
   # Use indirect expansion to access the associative array
