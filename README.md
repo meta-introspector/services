@@ -187,3 +187,7 @@ ssh ubuntu@i-08e0eb40cd783623c sudo bash -c /opt/services/scripts/runsolana.sh
    
      systemctl stop docker stop docker.socket   containerd snapd  snapd.socket
    
+   # overview
+
+   1. tf ->cloudformation -> lt -> user data -> asg -> ec2 
+   2. bootstrap.sh -> setup-solana.sh -> runsolana.sh

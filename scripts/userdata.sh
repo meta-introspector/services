@@ -1,0 +1,28 @@
+# fake user data for the docker file
+
+#!/bin/bash -xe
+export AGENT_NAME="AgentCodeName"
+export CHAIN_NAME="ChainName"
+export GIT_REPO="https://github.com/meta-introspector/services/" # FIXME
+export GIT_BRANCH="deployment/v0.0.1-solana-test-validator" # FIXME
+              mkdir /etc/solana/              
+              echo AGENT_NAME="${AgentCodeName}" > /etc/solana/env
+              echo CHAIN_NAME="${ChainName}" >> /etc/solana/env
+              echo GIT_REPO="${GitRepo}" >> /etc/solana/env
+              echo GIT_BRANCH="${GitBranch}"  >> /etc/solana/env
+              export HOME=/root
+              apt update
+              apt-get install -y ec2-instance-connect git wget unzip systemd curl
+              apt-get install -y cloud-utils apt-transport-https ca-certificates curl software-properties-common              
+              apt-get update              
+              snap install amazon-ssm-agent --classic || echo oops1
+              snap start amazon-ssm-agent || echo oops2
+              if [ ! -d "/opt/agent/" ]; then
+                git clone "${GitRepo}" "/opt/agent/"
+              fi
+              cd "/opt/services/" || exit 1
+              git stash
+              git fetch --all
+              git checkout --track --force "origin/${GitBranch}"
+              bash -x /opt/services/scripts/bootstrap.sh
+              

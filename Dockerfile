@@ -37,22 +37,17 @@ RUN apt-get update && \
 #FROM builder
 WORKDIR /opt/services/scripts/
 
+#ADD scripts/runsolana.sh /opt/services/scripts/runsolana.sh 
+#ADD scripts/bootstrap.sh /opt/services/scripts/bootstrap.sh 
+#ADD scripts/bootstrap2.sh /opt/services/scripts/bootstrap2.sh 
+#ADD scripts/bootstrap3.sh /opt/services/scripts/bootstrap3.sh 
+#ADD scripts/setup-kernel.sh /opt/services/scripts/setup-kernel.sh
+#ADD scripts/setup-swap.sh /opt/services/scripts/setup-swap.sh
+#ADD scripts/get_secrets_solana.sh /opt/services/scripts/get_secrets_solana.sh
+ADD scripts/userdata.sh /opt/services/scripts/userdata.sh
+RUN dos2unix /opt/services/scripts/userdata.sh
+RUN /bin/bash /opt/services/scripts/userdata.sh
 
-ADD scripts/runsolana.sh /opt/services/scripts/runsolana.sh
+#ADD systemd/solana.service /opt/services/systemd/solana.service
+#RUN dos2unix /opt/services/systemd/solana.service
 
-RUN dos2unix /opt/services/scripts/runsolana.sh
-RUN /bin/bash /opt/services/scripts/runsolana.sh
-
-
-#ADD scripts/part2.sh /opt/services/scripts/part2.sh
-
-ADD scripts/get_secrets_solana.sh /opt/services/scripts/get_secrets_solana.sh
-RUN dos2unix /opt/services/scripts/get_secrets_solana.sh
-#
-ADD systemd/solana.service /opt/services/systemd/solana.service
-
-RUN dos2unix /opt/services/scripts/part2.sh /opt/services/systemd/solana.service
-RUN /bin/bash /opt/services/scripts/part2.sh
-
-# Start the application
-#CMD ["bun", "run", "start"] 
