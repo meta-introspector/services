@@ -1,6 +1,7 @@
-#userdata.sh
-# this is a simulated user data for injection into a running system
 #!/bin/bash -xe
+
+# this is a simulated user data for injection into a running system
+
 set -x
  declare -A services=(
    ["branch"]="deployment/v0.0.1-solana-test-validator"
@@ -9,18 +10,8 @@ set -x
    ["script"]="scripts/bootstrap2.sh" # bootstrap calls bootstrap2 to avoid infinite loops
  )
 
-
-
-# declare -A eliza=(
-#   ["agent_name"]="tine_agent_9"
-#   ["branch"]="feature/v2/telegram",
-#   ["directory"]="services"
-#   ["repo"]="meta-introspector/cloud-deployment-eliza/"  
-# )
-
 declare -a services_array
-#services_array[0]="services"
-services_array[0]="solana"
+services_array[0]="services"
 
 # Loop over services_array
 for service_name in "${services_array[@]}"; do
@@ -65,7 +56,7 @@ for service_name in "${services_array[@]}"; do
   # Run bootstrap script if it exists
   if [[ -f "${dest}${script}" ]]; then
     echo "Running bootstrap script ${script} in ${dest}"
-    if ! bash -x ${dest}${script}; then
+    if ! bash -x "${dest}${script}"; then
       echo "Error: Bootstrap script failed in ${dest}${script}"
     fi
   else

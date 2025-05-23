@@ -26,40 +26,14 @@ services:
     command: "bash /opt/bootstrap/scripts/userdata.sh"
     stdin_open: true
     tty: true
-    #volumes:
-      #- /var/run/tappd.sock:/var/run/tappd.sock
-    #environment:
-     # - OPENAI_API_KEY=${OPENAI_API_KEY}
-     # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-     # - SERVER_PORT=${SERVER_PORT}
-     # - POSTGRES_URL=${POSTGRES_URL}
-     # - EVM_CHAINS=${EVM_CHAINS}
-      # - BIRDEYE_API_KEY=${BIRDEYE_API_KEY}
-      # - COMMUNITY_MANAGER_DISCORD_APPLICATION_ID=${COMMUNITY_MANAGER_DISCORD_APPLICATION_ID}
-      # - COMMUNITY_MANAGER_DISCORD_API_TOKEN=${COMMUNITY_MANAGER_DISCORD_API_TOKEN}
-      # - SOCIAL_MEDIA_MANAGER_DISCORD_APPLICATION_ID=${SOCIAL_MEDIA_MANAGER_DISCORD_APPLICATION_ID}
-      # - SOCIAL_MEDIA_MANAGER_DISCORD_API_TOKEN=${SOCIAL_MEDIA_MANAGER_DISCORD_API_TOKEN}
-      # - LIAISON_DISCORD_APPLICATION_ID=${LIAISON_DISCORD_APPLICATION_ID}
-      # - LIAISON_DISCORD_API_TOKEN=${LIAISON_DISCORD_API_TOKEN}
-      # - PROJECT_MANAGER_DISCORD_APPLICATION_ID=${PROJECT_MANAGER_DISCORD_APPLICATION_ID}
-      # - PROJECT_MANAGER_DISCORD_API_TOKEN=${PROJECT_MANAGER_DISCORD_API_TOKEN}
-      # - DEV_REL_DISCORD_APPLICATION_ID=${DEV_REL_DISCORD_APPLICATION_ID}
-      # - DEV_REL_DISCORD_API_TOKEN=${DEV_REL_DISCORD_API_TOKEN}
-      # - INVESTMENT_MANAGER_DISCORD_APPLICATION_ID=${INVESTMENT_MANAGER_DISCORD_APPLICATION_ID}
-      # - INVESTMENT_MANAGER_DISCORD_API_TOKEN=${INVESTMENT_MANAGER_DISCORD_API_TOKEN}
-      # - PGLITE_DATA_DIR=/root/.eliza/db
+    privileged: true
+
+    volumes:      
+      - /sys/fs/cgroup:/sys/fs/cgroup
+    tmpfs:
+      - /run
+      - /tmp
+            
     ports:
       - '8000:8000'
-    # depends_on:
-    #   postgres:
-    #     condition: service_healthy
-    #restart: always
-    #networks:
-    #  - eliza-network
-
-#networks:
-  #eliza-network:
-    #driver: bridge
-
-#volumes:
-  #postgres-data:
+    
