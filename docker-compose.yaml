@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: solana
-    command: "bash /opt/services/scripts/userdata.sh"
+    command: "bash /opt/bootstrap/scripts/userdata.sh"
     stdin_open: true
     tty: true
     #volumes:

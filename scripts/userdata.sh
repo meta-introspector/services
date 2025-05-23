@@ -1,6 +1,4 @@
 # fake user data for the docker file
-
-#!/bin/bash -xe
 export AGENT_NAME="AgentCodeName"
 export CHAIN_NAME="ChainName"
 export GIT_REPO="https://github.com/meta-introspector/services/" # FIXME

@@ -67,13 +67,13 @@ for service_name in "${services_array[@]}"; do
   git pull 
   
   # Run bootstrap script if it exists
-  if [[ -f "${dest}/${script}" ]]; then
-    echo "Running bootstrap script ${script} in $dest"
-    if ! bash -x ${dest}/${script}; then
-      echo "Error: Bootstrap script failed in $dest"
+  if [[ -f "${dest}${script}" ]]; then
+    echo "Running bootstrap script ${script} in ${dest}"
+    if ! bash -x ${dest}${script}; then
+      echo "Error: Bootstrap script failed in ${dest}${script}"
     fi
   else
-    echo "Warning: No bootstrap script found in ${dest}/${script}"
+    echo "Warning: No bootstrap script found in ${dest}${script}"
   fi
 
   # Return to original directory (optional, depending on your needs)

@@ -35,7 +35,7 @@ RUN apt-get update && \
 
 # Create a new stage for the final image
 #FROM builder
-WORKDIR /opt/services/scripts/
+WORKDIR /opt/bootstrap/scripts/
 
 #ADD scripts/runsolana.sh /opt/services/scripts/runsolana.sh 
 #ADD scripts/bootstrap.sh /opt/services/scripts/bootstrap.sh 
@@ -44,8 +44,8 @@ WORKDIR /opt/services/scripts/
 #ADD scripts/setup-kernel.sh /opt/services/scripts/setup-kernel.sh
 #ADD scripts/setup-swap.sh /opt/services/scripts/setup-swap.sh
 #ADD scripts/get_secrets_solana.sh /opt/services/scripts/get_secrets_solana.sh
-ADD scripts/userdata.sh /opt/services/scripts/userdata.sh
-RUN dos2unix /opt/services/scripts/userdata.sh
+ADD scripts/userdata.sh /opt/bootstrap/scripts/userdata.sh
+RUN dos2unix /opt/bootstrap/scripts/userdata.sh
 #RUN /bin/bash /opt/services/scripts/userdata.sh
 
 #ADD systemd/solana.service /opt/services/systemd/solana.service
