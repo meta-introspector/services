@@ -1,5 +1,3 @@
-#userdata.sh
-# this is a simulated user data for injection into a running system
 #!/bin/bash -xe
 set -x
 declare -A solana=(
@@ -56,7 +54,7 @@ for service_name in "${services_array[@]}"; do
   # Run bootstrap script if it exists
   if [[ -f "${dest}/${script}" ]]; then
     echo "Running bootstrap script ${script} in $dest"
-    if ! bash -x ${dest}/${script}; then
+    if ! bash -x "${dest}/${script}"; then
       echo "Error: Bootstrap script failed in $dest"
     fi
   else

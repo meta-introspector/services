@@ -5,7 +5,7 @@
 
 function Main {
     $command = "sudo bash -x /opt/services/scripts/runsolana.sh"    
-    $exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait    
+    #$exitCode = Invoke-SSMCommand -InstanceId $instanceId -Command $command -Wait    
 }
 
 Main

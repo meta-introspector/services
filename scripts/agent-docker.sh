@@ -2,7 +2,7 @@
 
 export $(cat /var/run/agent/secrets/env| xargs)
 
-echo AGENT_IMAGE ${AGENT_IMAGE}
+echo AGENT_IMAGE "${AGENT_IMAGE}"
 docker kill "agent-docker.service"     
 docker rm 	"agent-docker.service" 
 /usr/bin/docker run  -p 3000:3000  	\
@@ -11,5 +11,5 @@ docker rm 	"agent-docker.service"
 		--mount type=bind,source=/opt/agent,target=/opt/agent 	\
 		--env-file /var/run/agent/secrets/env 	\
 		--name "agent-docker.service" 	\
-		--entrypoint /opt/agent/scripts/docker-entrypoint-strace2.sh ${AGENT_IMAGE}
+		--entrypoint /opt/agent/scripts/docker-entrypoint-strace2.sh "${AGENT_IMAGE}"
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 set -x
 echo run solana
 bash -x /opt/services/scripts/runsolana.sh
