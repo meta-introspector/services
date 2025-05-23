@@ -44,7 +44,8 @@ fi
 
 apt install -y jq
 apt install -y lsof strace nmap
-apt install -y bzip2
+apt install -y bzip2 snapd
+apt install -y dos2unix
 
 #mkdir -p /opt/solana
 mkdir -p /opt/solana/archives
