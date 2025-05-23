@@ -46,7 +46,7 @@ WORKDIR /opt/services/scripts/
 #ADD scripts/get_secrets_solana.sh /opt/services/scripts/get_secrets_solana.sh
 ADD scripts/userdata.sh /opt/services/scripts/userdata.sh
 RUN dos2unix /opt/services/scripts/userdata.sh
-RUN /bin/bash /opt/services/scripts/userdata.sh
+#RUN /bin/bash /opt/services/scripts/userdata.sh
 
 #ADD systemd/solana.service /opt/services/systemd/solana.service
 #RUN dos2unix /opt/services/systemd/solana.service

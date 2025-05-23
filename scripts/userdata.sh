@@ -17,8 +17,8 @@ apt-get install -y cloud-utils apt-transport-https ca-certificates curl software
 apt-get update              
 snap install amazon-ssm-agent --classic || echo oops1
 snap start amazon-ssm-agent || echo oops2
-if [ ! -d "/opt/agent/" ]; then
-git clone "${GitRepo}" "/opt/agent/"
+if [ ! -d "/opt/services/" ]; then
+    git clone "${GIT_REPO}" "/opt/services/"
 fi
 cd "/opt/services/" || exit 1
 git stash
