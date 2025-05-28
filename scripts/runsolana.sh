@@ -53,7 +53,7 @@ mkdir -p /var/db/solana/
 #  sh -c "$(curl -sSfL https://release.anza.xyz/v2.2.14/install)"
 
 if [ -f /opt/solana/archives/solana-test-validator-x86_64-unknown-linux-gnu.tar.gz ]; then
-    echo "solana-release-aarch64-unknown-linux-gnu.tar.bz2 already exists, skipping download"
+    echo "solana-test-validator-x86_64-unknown-linux-gnu.tar.gz already exists, skipping download"
 else    
     cd /opt/solana/archives/
     # wget https://github.com/staratlasmeta/agave-dist/releases/download/v2.2.13/solana-release-aarch64-unknown-linux-gnu.tar.bz2
@@ -63,13 +63,13 @@ fi
 
 cd /opt/solana/
 
-if [ ! -f /opt/solana/solana-release/bin/solana-test-validator ] ;
+if [ ! -f opt/solana/solana-test-validator  ] ;
 then
     tar -xvzf archives/solana-test-validator-x86_64-unknown-linux-gnu.tar.gz
 fi
 
 #rm solana-release-aarch64-unknown-linux-gnu.tar.bz2
-cd  /opt/solana/solana-release/
+cd  /opt/solana/
 
 #apt install -y emacs-nox
 
