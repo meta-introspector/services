@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 set -x
 declare -A solana=(
-  ["branch"]="deployment/v0.0.1-solana-test-validator"
+  ["branch"]="deployment/v0.0.01-solana-test-validator-x86_64"
   ["directory"]="services"
   ["repo"]="meta-introspector/services"
   ["script"]="scripts/setup-solana.sh" # bootstrap calls bootstrap2 to avoid infinite loops

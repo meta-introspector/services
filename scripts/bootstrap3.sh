@@ -4,7 +4,7 @@
 set -x
 # we remove all services for now, this is the second bootstrap. everything should be up to date now.
 declare -A services=(
-  ["branch"]="deployment/v0.0.1-solana-test-validator"
+  ["branch"]="deployment/v0.0.01-solana-test-validator-x86_64"
   ["directory"]="services"
   ["repo"]="meta-introspector/services"
   ["script"]="scripts/bootstrap_f.sh" # bootstrap calls bootstrap2 to avoid infinite loops
