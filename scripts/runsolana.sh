@@ -65,7 +65,7 @@ cd /opt/solana/
 
 if [ ! -f /opt/solana/solana-release/bin/solana-test-validator ] ;
 then
-    tar -xvjf archives/solana-test-validator-x86_64-unknown-linux-gnu.tar.gz
+    tar -xvzf archives/solana-test-validator-x86_64-unknown-linux-gnu.tar.gz
 fi
 
 #rm solana-release-aarch64-unknown-linux-gnu.tar.bz2
